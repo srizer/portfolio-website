@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nighttime - sam rizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>sam rizer</h1>
+            <p>darkroom photography</p>
+            <div class="nav">
+                <a href="index.html">home</a> •
+                <a href="nighttime.html" class="active">nighttime</a> •
+                <a href="cars.html">cars</a> •
+                <a href="about.html">about</a>
+            </div>
+        </div>
+
+        <div class="content">            
+            <div class="image-container">
+                <a onclick="changeSlide(1)" class="slideshow">← Prev</a>
+                <img src="img/melrose diner sign.jpg" class="slides " alt="photo of the melrose diner sign" />
+                <img src="img/st mikes.jpg" class="slides " alt="photo of st mike's" />
+                <img src="img/eagles riot truck.jpg" class="slides " alt="photo of eagles nfc riot" />
+                <a onclick="changeSlide(-1)" class="slideshow">Next →</a>
+            </div>
+            <div class="slideshow-mobile-controls">
+                <a onclick="changeSlide(1)" class="slideshow-mobile">← Prev</a>
+                <a onclick="changeSlide(-1)" class="slideshow-mobile">Next →</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            
+            if (n > slides.length) {
+                slideIndex = 1
+            }    
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+            
+        let slideIndex = 1;
+        showSlides(slideIndex);
+    </script>
+</body>
+</html>
