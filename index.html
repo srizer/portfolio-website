@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sam rizer</title>
+    <title>sam rizer | darkroom photography</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,9 +21,31 @@
 
         <div class="content">
             <div class="image-container">
-                <img src="img/drumline 1200dpi.jpg" class="active" alt="Photography sample" />
+                <img src="img/drumline 1200dpi.jpg" class="featured" alt="Photography sample" />
+                <img src="img/subway.jpg" class="featured" alt="Photography sample" />
+                <img src="img/infrared garage.jpg" class="featured" alt="Photography sample" />
             </div>
         </div>
     </div>
+    <script>
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let i;
+        let pics = document.getElementsByClassName("featured");
+
+        console.log(pics);
+
+        for (i = 0; i < pics.length; i++) {
+            pics[i].style.display = "none";  
+        }
+
+        let visible = randomNumber(0, pics.length - 1);
+
+        console.log(visible);
+
+        pics[visible].style.display = "block";
+    </script>
 </body>
 </html>
