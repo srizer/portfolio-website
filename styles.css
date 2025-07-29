@@ -111,6 +111,7 @@ body {
     max-width: calc(100vh - 12vh - 10px);
     height: auto;
     width: auto;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
 }
 
 .image-container img.active {
